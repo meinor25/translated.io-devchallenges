@@ -1,2 +1,2 @@
-export * from './BaseButton';
-export * from './TranslationBox';
+export * from './base/BaseButton';
+export * from './translation';

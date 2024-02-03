@@ -1,6 +1,6 @@
 import bg_img from './assets/img/hero_img.jpg';
 import logo from './assets/img/logo.svg';
-import { TranslationBox } from './components/Ui/TranslationBox';
+import { TranslationBox } from './components/Ui/translation';
 
 function App() {
   return (

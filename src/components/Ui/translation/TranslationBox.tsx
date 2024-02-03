@@ -1,7 +1,12 @@
-import { useState } from 'react';
+import { FormEvent, useState } from 'react';
+import { TranslationTextArea } from './TranslationTextArea';
+const WORD_LIMIT = 500;
 
 export const TranslationBox = () => {
   const [wordCount, setWordCount] = useState(0);
+  const handleTextAreaChange = (event: FormEvent<HTMLTextAreaElement>) => {
+    setWordCount((event.target as HTMLTextAreaElement).value.length);
+  };
 
   return (
     <section className=' bg-primary rounded-xl  text-gray p-4'>
@@ -12,13 +17,11 @@ export const TranslationBox = () => {
         <button>Spanish</button>
       </div>
       <div className='mx-auto pt-2 flex flex-col '>
-        <textarea
-          name=''
-          maxLength={500}
-          id=''
-          className='bg-transparent outline-none resize-none h-28 w-full text-xs text-textLight'
+        <TranslationTextArea
+          wordCount={wordCount}
+          wordLimit={WORD_LIMIT}
+          handleTextAreaChange={handleTextAreaChange}
         />
-        <span className='text-gray text-xs self-end'> {wordCount}/500</span>
       </div>
 
       <div></div>
