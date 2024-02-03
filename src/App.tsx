@@ -1,35 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import bg_img from './assets/img/hero_img.jpg';
+import logo from './assets/img/logo.svg';
+import { TranslationBox } from './components/Ui/TranslationBox';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <main
+      className='bg-slate-950 h-screen bg-no-repeat bg-cover min-w-[320px]'
+      style={{
+        backgroundImage: `url(${bg_img})`,
+      }}
+    >
+      <picture>
+        <img src={logo} alt='logo' className='w-30 md:w-52 mx-auto py-10' />
+      </picture>
+
+      <section className='w-[96%] mx-auto'>
+        <TranslationBox />
+      </section>
+
+      {/* CONTENT */}
+
+      <footer className='pt-10 text-center'>
+        <span className='text-slate-400'>
+          Developed by Isaias Rodriguez | <a href=''>github.com/meinor25</a>
+        </span>
+      </footer>
+    </main>
+  );
 }
 
-export default App
+export default App;
